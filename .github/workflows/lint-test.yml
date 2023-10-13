@@ -1,0 +1,51 @@
+# A sample CI/CD workflow for Fensak rules. This workflow will:
+# - Lint the code using `pnpm lint`.
+# - Run the tests using `pnpm test` and output a junit report.
+# - Process the junit report and upload to GitHub Actions so that it can be viewed.
+
+name: lint-test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  # Run linter and tests against Fensak rules
+  linttest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+
+      - uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: lint
+        run: pnpm lint
+
+      - name: test
+        run: pnpm test
+        env:
+          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # See https://jestjs.io/docs/ecmascript-modules
+          NODE_OPTIONS: "--experimental-vm-modules"
+
+      - name: report
+        uses: mikepenz/action-junit-report@75b84e78b3f0aaea7ed7cf8d1d100d7f97f963ec # v4.0.0
+        if: always()
+        with:
+          report_paths: "junit.xml"
+          check_name: "jest test report"

@@ -1,0 +1,28 @@
+# This file contains the Fensak configuration file for this GitHub Organization.
+# The config file specifies which rules should be applied to the different repositories in your organization.
+#
+# This contains a starting point for a fictional repo `my-repo` in your org. Update to point to your real repos and
+# rules to get started using Fensak.
+#
+# Refer to https://github.com/fensak-io/fensak/blob/main/fskconfig/schema.json
+# for the expected config schema.
+
+repos:
+  # Each entry in this configuration represents a single repository, and the corresponding rule that should be run
+  # to determine auto-approval for PRs in the repo.
+  my-repo:
+    # The path to the rule relative to the repo root.
+    ruleFile: rules/sample.ts
+
+    # The following attribute is optional. When omitted, the rule language is automatically determined based on the rule
+    # file extension. Refer to the schema for the list of allowed values here.
+    # ruleLang: ts
+
+    # The following attribute is optional. This setting controls how many reviews should be required for PRs where the
+    # rule does not pass. The default is 1.
+    # requiredReviews: 1
+
+  # You can add more repositories by extending the repos map with more entries like so:
+  #
+  # my-other-repo:
+  #   ruleFile: rules/sample.js
