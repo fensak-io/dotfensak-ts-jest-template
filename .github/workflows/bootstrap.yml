@@ -18,6 +18,7 @@ permissions:
 jobs:
   bootstrap:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout code
