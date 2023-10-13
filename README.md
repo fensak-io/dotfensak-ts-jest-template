@@ -1,8 +1,8 @@
-# Deno template for .fensak repositories
+# TypeScript and Jest template for .fensak repositories
 
-Use this template to create a JavaScript and [Jest](https://jestjs.io/) based `.fensak` repository in your Organization
-with a recommended project configuration for writing and testing rules. Feel free to clone this repo and make any
-modifications necessary to get up and running with Fensak.
+Use this template to create a [TypeScript](https://www.typescriptlang.org/) and [Jest](https://jestjs.io/) based
+`.fensak` repository in your Organization with a recommended project configuration for writing and testing rules. Feel
+free to clone this repo and make any modifications necessary to get up and running with Fensak.
 
 Check out our [Getting started guide](https://docs.fensak.io/docs/getting-started/).
 
@@ -12,7 +12,7 @@ This template includes the following:
 
 ### Sample rule
 
-A sample rule file (using JavaScript) is provided in the [rules folder](/rules). The sample rule is a basic "Hello
+A sample rule file (using TypeScript) is provided in the [rules folder](/rules). The sample rule is a basic "Hello
 world" example that allows any PRs that only contains updates to the `README.md` file in the root of the repository. It
 should give you a basic starting point for navigating the patch object provided to rules functions by Fensak.
 
@@ -24,7 +24,7 @@ Also check out our [Writing rules scripts guide](https://docs.fensak.io/docs/wri
 ### Sample config
 
 A sample [fensak.yml](/fensak.yml) config file is provided for your convenience. The config file maps a single fictional
-repository in your Organization (`my-repo`) against the sample rule, [rules/sample.js](/rules/sample.js).
+repository in your Organization (`my-repo`) against the sample rule, [rules/sample.ts](/rules/sample.ts).
 
 Check out our [Config file reference](https://docs.fensak.io/docs/config-reference/) for an overview of the Fensak
 config file.
@@ -33,15 +33,14 @@ config file.
 
 This template includes a project scaffold for running tests for the rules using [Jest](https://jestjs.io/). The tests
 contain example usage of the Fensak module for testing various pull requests against the rules. See
-[rules/sample.test.js](/rules/sample.test.js) for more details.
+[rules/sample.test.ts](/rules/sample.test.ts) for more details.
 
 To run the test, follow these steps:
 
 1. Install [Node](https://nodejs.org/en) if you do not have it already.
 1. Install [pnpm](https://pnpm.io/) if you do not have it already.
 1. Install dependencies by running `pnpm install`.
-1. Run `pnpm test` with modules support (set the environment variable `NODE_OPTIONS=--experimental-vm-modules`). See
-   https://jestjs.io/docs/ecmascript-modules for more information on why the `NODE_OPTIONS` env var is necessary.
+1. Run `pnpm test`.
 
 > **NOTE**
 >
