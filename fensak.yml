@@ -20,7 +20,7 @@ repos:
 
     # The following attribute is optional. This setting controls how many reviews should be required for PRs where the
     # rule does not pass. The default is 1.
-    # requiredReviews: 1
+    # requiredApprovals: 1
 
   # You can add more repositories by extending the repos map with more entries like so:
   #
