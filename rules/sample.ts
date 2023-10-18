@@ -4,10 +4,10 @@
  */
 
 // fensak remove-start
-import type { IPatch } from "@fensak-io/reng";
+import type { IChangeSetMetadata, IPatch } from "@fensak-io/reng";
 // fensak remove-end
 
-function main(inp: IPatch[]): boolean {
+function main(inp: IPatch[], _metadata: IChangeSetMetadata): boolean {
   const numPatches = inp.length;
   if (numPatches == 0) {
     // No files updated, so approve.
