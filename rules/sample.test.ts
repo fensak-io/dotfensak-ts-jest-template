@@ -23,7 +23,12 @@ const testRepo: IGitHubRepository = {
 const opts = { logMode: RuleLogMode.Console };
 
 test("No changes should be approved", async () => {
-  const result = await runRule(ruleFn, [], { sourceBranch: "foo" }, opts);
+  const result = await runRule(
+    ruleFn,
+    [],
+    { sourceBranch: "foo", targetBranch: "bar" },
+    opts,
+  );
   expect(result.approve).toBe(true);
 });
 
