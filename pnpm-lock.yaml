@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@fensak-io/reng':
-    specifier: ^1.2.1
-    version: 1.2.1
+    specifier: ^1.3.0
+    version: 1.3.0
   '@jest/globals':
     specifier: ^29.7.0
     version: 29.7.0
@@ -1318,8 +1318,8 @@ packages:
       yaml: 2.3.3
     dev: true
 
-  /@fensak-io/reng@1.2.1:
-    resolution: {integrity: sha512-AJ8Ipc/is0v1pefPdRmU+c5D2VOWusLHnQiRT51rrG2LMcXRq5lp5rZGUB1TMbR84EBbTPF3KaH/cA4ntgeHWg==}
+  /@fensak-io/reng@1.3.0:
+    resolution: {integrity: sha512-L4OOs0NkbVpUAKNs7wLSaH2d5f4CiEvtw4HD+3/vfAy6T4rwB1eZs8SSf7GLKoJxCujvBflEAH/sFnm7+58Dtg==}
     dependencies:
       '@babel/core': 7.23.2
       '@babel/preset-env': 7.23.2(@babel/core@7.23.2)
@@ -1327,6 +1327,10 @@ packages:
       '@fensak-io/front-matter': 1.0.0
       '@octokit/rest': 20.0.2
       babel-preset-minify: 0.5.2
+      json5: 2.2.3
+      microdiff: 1.3.2
+      toml: 3.0.0
+      yaml: 2.3.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3644,6 +3648,10 @@ packages:
   /merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /microdiff@1.3.2:
+    resolution: {integrity: sha512-pKy60S2febliZIbwdfEQKTtL5bLNxOyiRRmD400gueYl9XcHyNGxzHSlJWn9IMHwYXT0yohPYL08+bGozVk8cQ==}
     dev: true
 
   /micromatch@4.0.5:
