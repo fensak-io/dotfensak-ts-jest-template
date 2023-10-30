@@ -9,7 +9,7 @@ import {
   runRule,
   emptyChangeSetMetadata,
 } from "@fensak-io/reng";
-import type { IGitHubRepository } from "@fensak-io/reng";
+import type { Repository } from "@fensak-io/reng";
 import { Octokit } from "@octokit/rest";
 
 const ruleFnSrc = fs.readFileSync(`${__dirname}/sample.ts`, "utf8");
@@ -17,7 +17,7 @@ const ruleFn = compileRuleFn(ruleFnSrc, RuleFnSourceLang.Typescript);
 const octokit = new Octokit({
   auth: process.env.GITHUB_API_TOKEN,
 });
-const testRepo: IGitHubRepository = {
+const testRepo: Repository = {
   owner: "fensak-io",
   name: "dotfensak-deno-template",
 };
